@@ -1,0 +1,24 @@
+.default{
+    font-size: larger;
+}
+
+.male{
+    background-color: blue;
+    color:chocolate;
+    border-radius: 100%;
+}
+.female{
+    background-color: pink;
+    color:black;
+    border-radius: 100%;
+}
+.other{
+    background-color: yellow;
+    color:red;
+}
+.india-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }

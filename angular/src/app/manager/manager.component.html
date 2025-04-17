@@ -1,0 +1,18 @@
+<p>manager works!</p>
+<div class="class">
+    emp name:<input type="text" [attr.value]="name">
+    emp age:<input type="text" [attr.value]="age">
+    <br>
+    <hr>
+    <button [disabled]="isdisabled">click me</button>
+    <button disabled={{isdisabled}}>click me also this</button>
+    <br>
+    <hr>
+    <button  (click)="save()">submit</button>
+    <hr>
+</div>
+<div>
+    emp fulname:<input type="text" value={{p_fname+p_lname}}>
+    emp age:<input type="text" value={{P_age}}>
+    <hr>
+</div>
