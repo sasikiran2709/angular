@@ -7,6 +7,7 @@ import { CalcComponent } from './calc/calc.component';
 import { StudentComponent } from './student/student.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 
+
 @Component({
     selector: 'app-root',
     imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, RegisterationComponent],
