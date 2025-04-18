@@ -29,7 +29,7 @@ export class RegisterationComponent {
 
  Gender:string="female";
 
- 
+
    
   }
   
