@@ -1,11 +1,11 @@
 
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-registeration',
-    imports: [FormsModule, CommonModule],
+    imports: [CommonModule],
     templateUrl: './registeration.component.html',
     styleUrl: './registeration.component.css'
 })
@@ -13,7 +13,7 @@ export class RegisterationComponent {
   // dropdown
  //state:string='KA';
  //end
-
+ 
  //gender
  gender: string = 'male'; // Or 'Male' to set default
 //end
@@ -29,9 +29,14 @@ export class RegisterationComponent {
 
  Gender:string="female";
 
+ 
+}
+
+
+
 
    
-  }
+  
   
 
   
