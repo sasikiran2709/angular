@@ -31,10 +31,12 @@ X:number=101;
 
 //  Gender:string="female";
  
- namem:string="sasi";
+ namem:string="washigton";
  ender:string="male";
 namef="vani"
 
+members:string[]=['x','t','r'];
+calval:string='B';
 
 }
 

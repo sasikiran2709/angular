@@ -159,7 +159,7 @@
     </div>
   </div> -->
 
-  <div *ngIf="ender==='male'; then maleBlock; else femaleBlock"></div>
+  <div *ngIf="ender=='male'; then maleBlock; else femaleBlock"></div>
 
   <!-- Male block -->
   <ng-template #maleBlock>
@@ -170,11 +170,31 @@
   <ng-template #femaleBlock>
     <div  style="background-color: pink;color:white">hi mrs.{{namef}} welcome</div>
   </ng-template>
-
+<!-- ngswitch -->
   <div [ngSwitch]="namem">
-    <div *ngSwitchCase="'sasi'">son</div>
-    <div *ngSwitchCase="'ravi'">daughter</div>
-    <div *ngSwitchCase="'nothing'">dad</div>
-    <div *ngSwitchDefault>unkown data</div>
+    <div *ngSwitchCase="'somanath'">son</div>
+    <div *ngSwitchCase="'sarika'">daughter</div>
+    <div *ngSwitchCase="'washigton'">dad</div>
+    <div *ngSwitchDefault>unknown data</div>
+    
     
   </div>
+
+  <!-- ngfor -->
+  <ol>
+    <li *ngFor="let  name of members">{{name}}</li>
+  </ol>
+<ng-template [ngIf]="calval=='A'">
+<span>Apple</span>
+</ng-template>
+
+<ng-template [ngIf]="calval=='B'">
+  <span>Bananna</span>
+  </ng-template>
+ 
+  <ng-template [ngIf]="calval=='O'">
+    <span>orange</span>
+    </ng-template>
+
+    
+

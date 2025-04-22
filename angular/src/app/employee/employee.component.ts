@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { DoctorComponent } from '../doctor/doctor.component';
+
 
 @Component({
     selector: 'app-employee',
-    imports: [DoctorComponent],
+    imports: [],
     templateUrl: './employee.component.html',
     styleUrl: './employee.component.css'
 })
