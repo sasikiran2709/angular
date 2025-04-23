@@ -1,0 +1,11 @@
+table, th, td {
+    border: 1px solid rgb(49, 102, 200);
+    
+  }
+  table {
+    border-spacing: 30px;
+    background-color:chartreuse;
+    border-color:blue;
+    text-align: center;
+   
+  } 

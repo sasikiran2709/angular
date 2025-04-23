@@ -1,0 +1,26 @@
+
+<table style="width:100%">
+    <thead>
+      <tr>  
+        <th> PId</th>
+        <th> Fname</th>
+        <th>Lname</th>
+        <th> Age </th>
+        <th>Bgroup </th>
+        <th> Disease </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of patient_list">
+        
+        <td>{{item.Pid}}</td>
+        <td>{{ item.fname |uppercase }}</td>
+        <td>{{ item.lname | uppercase}}</td>
+        <td>{{ item.age}}</td>
+        <td>{{ item.bggroup}}</td>
+        <td>{{ item.disease}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+<img src="assets/tiger.jpg" alt="tiger"/>

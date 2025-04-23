@@ -7,12 +7,13 @@ import { CalcComponent } from './calc/calc.component';
 import { StudentComponent } from './student/student.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
 
 
 @Component({
     selector: 'app-root',
     standalone:true,
-    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, RegisterationComponent,DoctorComponent],
+    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, RegisterationComponent,DoctorComponent,PatientListComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

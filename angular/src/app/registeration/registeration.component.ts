@@ -31,7 +31,7 @@ X:number=101;
 
 //  Gender:string="female";
  
- namem:string="washigton";
+ namem:string="somanath";
  ender:string="male";
 namef="vani"
 
