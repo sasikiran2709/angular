@@ -15,8 +15,7 @@ import { BComponent } from './b/b.component';
 @Component({
     selector: 'app-root',
     standalone:true,
-    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, 
-      RegisterationComponent,DoctorComponent,PatientListComponent,PatientgroupComponent,BComponent],
+    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent,RegisterationComponent,DoctorComponent,PatientListComponent,PatientgroupComponent,BComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
