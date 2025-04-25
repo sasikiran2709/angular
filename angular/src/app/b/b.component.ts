@@ -19,9 +19,7 @@ export class BComponent {
   y:number=10;
   z:number=10;
   L:number=this.x+this.y+this.z;
-  per_name:string='';
-save(){
-
-}
-
+  per_name:string='sasi';
+cellnumber:string="8975623124";
+fname:string="";
 }

@@ -10,12 +10,14 @@ import { DoctorComponent } from './doctor/doctor.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientgroupComponent } from './patientgroup/patientgroup.component';
 import { BComponent } from './b/b.component';
+import { LoginComponent } from './login/login.component';
 
 
 @Component({
     selector: 'app-root',
     standalone:true,
-    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent,RegisterationComponent,DoctorComponent,PatientListComponent,PatientgroupComponent,BComponent],
+    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent,RegisterationComponent,DoctorComponent,
+      PatientListComponent,PatientgroupComponent,BComponent,LoginComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
