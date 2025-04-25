@@ -11,10 +11,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class PatientListComponent {
 
+  state:string[]=['AP','KA']
   patient_list: patient[] ;
   
     constructor() {
-      // 🔸 Initialize the instance variable
+      // 🔸 Initialize the variable
       this.patient_list =  [
         { 
           Pid: 1, 

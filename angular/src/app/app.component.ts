@@ -8,12 +8,15 @@ import { StudentComponent } from './student/student.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientgroupComponent } from './patientgroup/patientgroup.component';
+import { BComponent } from './b/b.component';
 
 
 @Component({
     selector: 'app-root',
     standalone:true,
-    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, RegisterationComponent,DoctorComponent,PatientListComponent],
+    imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent, 
+      RegisterationComponent,DoctorComponent,PatientListComponent,PatientgroupComponent,BComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

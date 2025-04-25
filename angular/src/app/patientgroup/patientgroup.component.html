@@ -1,0 +1,56 @@
+<!-- <div *ngFor="let group of patientgrp; let i = index" class="bg-danger">
+    <caption class="fw-bold container row"> Blood Group:</caption>
+    <table [ngClass]="tableClasses[i]" class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>PId</th>
+                <th>Fname</th>
+                <th>Lname</th>
+                <th>Age</th>
+                <th>Bgroup</th>
+                <th>Disease</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let patient of group">
+                <td>{{ patient.Pid }}</td>
+                <td>{{ patient.fname }}</td>
+                <td>{{ patient.lname  }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.bggroup }}</td>
+                <td>{{ patient.disease }}</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+</div> -->
+<div *ngFor="let group of patientgrp; let i = index" class="mb-4 p-3 border rounded">
+    <h5 class="fw-bold">Blood Group: {{ group[0].bggroup }}</h5>
+  
+    <table [ngClass]="['table', 'table-striped', tableClasses[i % tableClasses.length]]">
+      <thead>
+        <tr>
+          <th>PId</th>
+          <th>Fname</th>
+          <th>Lname</th>
+          <th>Age</th>
+          <th>Bgroup</th>
+          <th>Disease</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of group">
+          <td>{{ patient.Pid }}</td>
+          <td>{{ patient.fname }}</td>
+          <td>{{ patient.lname }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.bggroup }}</td>
+          <td>{{ patient.disease }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,5 +1,14 @@
+<!-- select:<select>
+  <option>
+    ---SELECT----
+  </option>
+  <option *ngFor="let sat of state">
+    {{sat}}
+  </option>
+  
 
-<table style="width:100%">
+</select>
+<table class="table table-striped">
     <thead>
       <tr>  
         <th> PId</th>
@@ -12,15 +21,20 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of patient_list">
-        
         <td>{{item.Pid}}</td>
-        <td>{{ item.fname |uppercase }}</td>
+        <td>{{ item.fname | uppercase }}</td>
         <td>{{ item.lname | uppercase}}</td>
         <td>{{ item.age}}</td>
         <td>{{ item.bggroup}}</td>
         <td>{{ item.disease}}</td>
       </tr>
     </tbody>
-  </table>
-  
-<img src="assets/tiger.jpg" alt="tiger"/>
+  </table> -->
+  <ng-container *ngFor="let item of patient_list">
+    Pid:{{item.Pid}}
+    fname:{{ item.fname  }}
+    lname{{ item.lname }}
+    age:{{ item.age}}
+    bg:{{ item.bggroup}}
+    dis:{{ item.disease}} <br>
+  </ng-container>
