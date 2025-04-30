@@ -9,7 +9,7 @@
 <div style="display: flex; gap: 40px; justify-content: center;">
 
   <!-- Left: Normal Model -->
-  <div style="display: flex; flex-direction: column; max-width: 400px; gap: 10px;page-orientation:inherit;">
+  <!-- <div style="display: flex; flex-direction: column; max-width: 400px; gap: 10px;page-orientation:inherit;">
     <h4>Normal Model</h4>
     <label>
       Name:
@@ -31,7 +31,7 @@
       Fee:
       <input type="text" [value]="myStudent.fee" />
     </label>
-  </div>
+  </div> -->
 
   <!-- Right: ngModel Binding
   <div style="display: flex; flex-direction: column; max-width: 400px; gap: 10px;">
@@ -60,8 +60,13 @@
   </div>
 
 </div> -->
-<!-- <p><strong>Name:</strong> {{ myStudent.name }}</p>
-<p><strong>cell</strong> {{ myStudent.cell }}</p>
-<p><strong>course</strong> {{ myStudent.course}}</p>
+<p><strong>student details</strong> {{ myStudent | json}}</p>
+<p><strong>Name:</strong> {{ myStudent.name | titlecase}}</p>
+<p><strong>cell</strong> {{ myStudent.cell | number }}</p>
+<p><strong>course</strong> {{ myStudent.course | uppercase}}</p>
 <p><strong>email</strong> {{ myStudent.email}}</p>
-<p><strong>fee</strong> {{ myStudent.fee}}</p> -->
+<p><strong>fee</strong> {{ myStudent.fee | currency:'JPY' }}</p>
+<p><strong>DOB</strong> {{ dob | date:'dd/MM/yyyy ' }}</p>
+<p><strong>DOB</strong> {{ dob | date:'MM/d/yyyy ' }}</p>
+<p><strong>DOB</strong> {{ dob | date:'MM/d/yy ' }}</p>
+<p><strong>DOB</strong> {{ dob | date:'fullDate' }}</p>

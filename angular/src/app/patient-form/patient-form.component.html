@@ -1,0 +1,89 @@
+<header class="bg-danger text-white text-center py-3">
+    <h1 style="font-size: 20px;"><i class="fas fa-sign-in-alt"></i> Welcome to Patient Details Portal</h1>
+</header>
+
+
+<form [formGroup]="platformForm" class="d-flex justify-content-center align-items-center bg-warning" #form="ngForm" (ngSubmit)="add()">
+    
+    <div class="card w-50 bg-light">
+        <div class="card-body">
+            <h5 class="card-title text-center mb-2"><i class="fa-solid fa-user-group"></i> Patient Details Registration Form</h5>
+            <hr>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="fname">Fname</label>
+                <input class="form-control" id="fname" formControlName="firstname" placeholder="fname(required)" autocomplete="off">
+                <div *ngIf="(model['firstname'].dirty || model['firstname'].touched)" class="text-danger">
+                    <div *ngIf="model['firstname'].errors?.['required']">Please enter the first name.</div>
+                    <div *ngIf="model['firstname'].errors?.['pattern']">Only characters are allowed.</div>
+                    <div *ngIf="model['firstname'].errors?.['minlength']">Minimum length is 3 characters.</div>
+                    <div *ngIf="model['firstname'].errors?.['maxlength']">Maximum length is 10 characters.</div>
+                </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lname">Lname</label>
+                <input class="form-control" id="lname" formControlName="lastname" placeholder="lname(required)"  autocomplete="off">
+                <div *ngIf="(model['lastname'].dirty || model['lastname'].touched)" class="text-danger">
+                    <div *ngIf="model['lastname'].errors?.['required']">Please enter the last name.</div>
+                    <div *ngIf="model['lastname'].errors?.['pattern']">Only characters are allowed.</div>
+                    <div *ngIf="model['lastname'].errors?.['minlength']">Minimum length is 3 characters.</div>
+                    <div *ngIf="model['lastname'].errors?.['maxlength']">Maximum length is 10 characters.</div>
+                </div>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input class="form-control" id="age" formControlName="age" placeholder="Age(required)"  autocomplete="off">
+                <div *ngIf="model['age'].invalid && (model['age'].dirty ||model['age'].touched)" class="text-danger">
+                    <div *ngIf="model['age'].errors?.['required']">Please enter your age.</div>
+                    <div *ngIf="model['age'].errors?.['pattern']">Age must be between 15 and 70.</div>
+                </div>
+            </div>
+
+            <!-- Blood Group -->
+            <div class="form-group">
+                <label for="bg">Blood Group</label>
+                <select id="bloodGroup" formControlName="bg" class="form-select">
+                    <option value="">Select Blood Group</option>
+                    <option *ngFor="let bg of bg_list" [value]="bg">{{ bg }}</option>
+                </select>
+                <div *ngIf="(model['bg'].touched || model['bg'].dirty) && model['bg'].invalid" class="text-danger">
+                    <div *ngIf="model['bg'].errors?.['required']">Please select a blood group.</div>
+                    
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-2">
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-sign-in-alt"></i> Save
+                </button>
+            </div>
+        </div>
+    </div>
+   
+</form>
+<form>
+    <div *ngIf="formSubmitted" class="alert alert-success mt-3 text-center">
+        <h5>Form submitted successfully!</h5>
+        <hr>
+        <div class="text-start">
+          <p><strong>First Name:</strong> {{ submittedData.firstname }}</p>
+          <p><strong>Last Name:</strong> {{ submittedData.lastname }}</p>
+          <p><strong>Age:</strong> {{ submittedData.age }}</p>
+          <p><strong>Blood Group:</strong> {{ submittedData.bg }}</p>
+        </div>
+      </div>
+</form>
+<!-- Footer Section -->
+<footer class="bg-danger text-white text-center">
+    <p>&copy; 2025 My Website | All rights reserved.</p>
+    <p>Follow us on:
+        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </p>
