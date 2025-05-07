@@ -1,45 +1,14 @@
-<!-- hi -->
-<!-- <app-a>
-   
-    <div i>{{x}}</div>
-    <div j>{{y}}</div>
-    <div z>{{z}}</div>
-    <div>{{L}}</div>
-</app-a> -->
-
-    <!-- name:<input type="text" id="tb" [(ngModel)]="per_name" name="i" #k="ngModel"  required><br>
-   <div>
-    valid:{{k.valid}}<br>
-    INvalid:{{k.invalid}}<br>
-    touched:{{k.touched}}<br>
-    untouched:{{k.untouched}}<br>
-    dirty:{{k.dirty}}<br>
-    pristine:{{k.pristine}}<br>
-    
-   </div> -->
-   cell number:<input type="text" id="tb" [(ngModel)]="cellnumber"  #cel="ngModel"  required pattern="^\d{10}$" autocomplete="off" placeholder="enter the number"><br>
-    <div *ngIf="cel.invalid && cel.dirty"  class="text-danger">
-
-        <div *ngIf="cel.errors?.['required']">  
-            Please enter the cell number.
-          </div>
-          
-          <div *ngIf="cel.errors?.['pattern']">
-            mobile number should be 10 numbers. 
-          </div>
-          
-        
-    </div>
-    <hr>    
-    person name:<input type="text" id="tb" [(ngModel)]="fname"  #nam="ngModel"  required pattern="^[A-za-z]+$" autocomplete="off"><br>
-    <div *ngIf="nam.invalid && (nam.dirty || nam.touched)"  class="text-danger">
-
-        <div *ngIf="nam.errors?.['required']">
-            Please enter the name
-          </div>
-          
-          <div *ngIf="nam.errors?.['pattern']">
-            enter characters only
-          </div>
-        
-    </div>
+<!--input-->
+<!-- <div>
+  Z:<input type="text" [(ngModel)]="z">
+</div>
+<div>
+  <button (click)="add()">Add</button>
+</div> -->
+<!--output-->
+<div class="container">
+  x:<input type="number" [(ngModel)]="x" placeholder="Enter first number" /><br>
+  y:<input type="number" [(ngModel)]="y" placeholder="Enter second number" /><br>
+  <button (click)="emitAdd()">Add</button>
+  <button (click)="emitSub()">Subtract</button>
+</div>

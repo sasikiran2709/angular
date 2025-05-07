@@ -1,0 +1,24 @@
+
+
+<app-new-employee (addEmployee)="newemp_add($event)"></app-new-employee>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> EId</th>
+            <th> Name</th>
+            <th> cell </th>
+            <th>email </th>
+            <th> experience </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of emp">
+            <td>{{item.Eid}}</td>
+            <td>{{ item.name}}</td>            
+            <td>{{ item.cell}}</td>
+            <td>{{ item.email}}</td>
+            <td>{{ item.exp}}</td>
+        </tr>
+    </tbody>
+</table>

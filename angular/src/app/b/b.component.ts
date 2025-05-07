@@ -1,25 +1,36 @@
-import { Component } from '@angular/core';
-import { AComponent } from "../a/a.component";
-import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-
-
 
 @Component({
   selector: 'app-b',
-  standalone:true,
-  imports: [AComponent,CommonModule,FormsModule],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './b.component.html',
   styleUrl: './b.component.css'
 })
 export class BComponent {
-  comp_name:string="palle consulting srvices";
-  x:number=10;
-  y:number=10;
-  z:number=10;
-  L:number=this.x+this.y+this.z;
-  per_name:string='sasi';
-cellnumber:string="8975623124";
-fname:string="";
+  //input
+  //  @Input() comp_name:string="";
+  //  @Input() i:any;
+  //  @Input() j:any;
+
+  //  z:number=0;
+
+  //  add(){
+  //  this.z= Number(this.i)+Number(this.j);
+  //  }
+  x: number = 0;
+  y: number = 0;
+
+  @Output() i = new EventEmitter<number>(); // Add
+  @Output() j = new EventEmitter<number>(); // Sub
+
+  emitAdd() {
+    this.i.emit(this.x + this.y);
+  }
+
+  emitSub() {
+    this.j.emit(this.x - this.y);
+  }
+
 }

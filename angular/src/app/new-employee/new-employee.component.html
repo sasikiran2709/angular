@@ -1,0 +1,65 @@
+<header class="bg-danger text-white text-center py-3">
+    <h1 style="font-size: 20px;"><i class="fas fa-sign-in-alt"></i> Welcome to Employee Details Portal</h1>
+  </header>
+  
+  <form (ngSubmit)="addemployee()" class="d-flex justify-content-center align-items-center">
+    <div class="card bg-light p-3 w-50">
+      <div class="card-body container">
+        <h5 class="card-title text-center mb-3">
+          <i class="fa-solid fa-user-group"></i> Employee Details Registration Form
+        </h5>
+        <hr>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="eid" class="form-label">EID</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [(ngModel)]="emp.Eid" name="eid" autocomplete="off" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="name" class="form-label">Name</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [(ngModel)]="emp.name" name="name" autocomplete="off" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="cell" class="form-label">Cell</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [(ngModel)]="emp.cell" name="cell" autocomplete="off" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="email" class="form-label">Email</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [(ngModel)]="emp.email" name="email" autocomplete="off" />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label for="exp" class="form-label">Experience</label>
+          </div>
+          <div class="col-md-8">
+            <input type="text" class="form-control" [(ngModel)]="emp.exp" name="exp" autocomplete="off" />
+          </div>
+        </div>
+  
+        <div class="text-center mb-2">
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-sign-in-alt"></i> Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>

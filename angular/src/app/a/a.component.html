@@ -1,9 +1,16 @@
 
-<div >
-    <!-- hello -->
-    <ng-content></ng-content><br>
-    <ng-content select="i"></ng-content>
-    <ng-content select="j"></ng-content>
-        <!-- sasikiran -->
-    
-</div>
+
+<!--input-->
+<!-- <div class="container">
+x:<input type="number" [(ngModel)]="x" placeholder="Enter first number" /><br>
+y:<input type="number" [(ngModel)]="y" placeholder="Enter second number" />
+<app-b [i]="x" [j]="y"></app-b>
+</div> -->
+<!-- Display result -->
+
+  
+  <!-- Include child component once -->
+  <app-b (i)="emitAdd($event)" (j)="emitSub($event)"></app-b>
+  <div class="container">
+    Result:<input type="text" [value]="result" readonly>
+  </div>
