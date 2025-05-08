@@ -12,9 +12,10 @@ import { PatientgroupComponent } from './patientgroup/patientgroup.component';
 import { LoginComponent } from './login/login.component';
 import { PateintDetailsComponent } from './pateint-details/pateint-details.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
-import { CustompipesComponent } from './custompipes/custompipes.component';
 import { AComponent } from './a/a.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { PatientdComponent } from './patient/patientd/patientd.component';
+
 
 
 
@@ -22,8 +23,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     selector: 'app-root',
     standalone:true,
     imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent,RegisterationComponent,DoctorComponent,
-      PatientListComponent,PatientgroupComponent,LoginComponent,PateintDetailsComponent,PatientFormComponent,CustompipesComponent,AComponent
-    ,EmployeeListComponent],
+      PatientListComponent,PatientgroupComponent,LoginComponent,PateintDetailsComponent,PatientFormComponent,AComponent
+    ,EmployeeListComponent,PatientdComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
