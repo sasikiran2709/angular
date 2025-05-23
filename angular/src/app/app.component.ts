@@ -15,6 +15,7 @@ import { PatientFormComponent } from './patient-form/patient-form.component';
 import { AComponent } from './a/a.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PatientdComponent } from './patient/patientd/patientd.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -24,7 +25,7 @@ import { PatientdComponent } from './patient/patientd/patientd.component';
     standalone:true,
     imports: [RouterOutlet, EmployeeComponent, ManagerComponent, PatientComponent, CalcComponent, StudentComponent,RegisterationComponent,DoctorComponent,
       PatientListComponent,PatientgroupComponent,LoginComponent,PateintDetailsComponent,PatientFormComponent,AComponent
-    ,EmployeeListComponent,PatientdComponent],
+    ,EmployeeListComponent,PatientdComponent,RxjsComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
