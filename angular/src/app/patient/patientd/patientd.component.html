@@ -1,20 +1,118 @@
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th> PId</th>
-            <th> FName</th>
-            <th> LName </th>
-            <th>bg</th>
+<div class="container mt-4">
+    <div class="card shadow">
+        <!-- Card Header -->
+        <div class="card-header bg-primary text-white text-center">
+            <h5 class="mb-0">
+                <i class="fas fa-sign-in-alt"></i> Welcome to Patient Details Portal
+            </h5>
+        </div>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of patlist">          
-            <td>{{item.pid}}</td>
-            <td>{{ item.fname}}</td>
-            <td>{{ item.lname}}</td>
-            <td>{{ item.bloodgroup}}</td>
+        <!-- Card Body with Form -->
+        <div class="card-body">
+            <div class="row mb-3 align-items-center">
+                <label for="searchPid" class="col-md-3 col-form-label">Search by Patient ID</label>
+                <div class="col-md-6">
+                    <input type="number" id="searchPid" class="form-control" [(ngModel)]="searchPid" name="searchPid"
+                        autocomplete="off" />
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-primary" (click)="searchPatientById()">Search</button>
+                     <button type="button" class="btn btn-primary ms-2" (click)="Viewtabel()" >View Table</button>
+                </div>
+                
+            </div>
+            <form #f="ngForm" novalidate>
+                <!-- PID -->
+                <div class="row mb-3 align-items-center">
+                    <label for="pid" class="col-md-3 col-form-label">Patient Id</label>
+                    <div class="col-md-9">
+                        <input type="text" id="pid" name="pid" class="form-control" [(ngModel)]="patient.pid" required
+                            #pid="ngModel" pattern="^[0-9]*$" autocomplete="off" />
+                        <div *ngIf="pid.invalid && (pid.dirty || pid.touched)" class="text-danger">
+                            <div *ngIf="pid.errors?.['required']">Please enter the pid.</div>
+                            <div *ngIf="pid.errors?.['pattern']">Only numbers are allowed.</div>
+                        </div>
+                    </div>
+                </div>
 
-        </tr>       
-    </tbody>
-</table>
+                <!-- First Name -->
+                <div class="row mb-3 align-items-center">
+                    <label for="fname" class="col-md-3 col-form-label">*First Name</label>
+                    <div class="col-md-9">
+                        <input type="text" id="fname" name="fname" class="form-control" [(ngModel)]="patient.fname"
+                            required minlength="3" maxlength="10" pattern="^[A-Za-z]+$" #fname="ngModel"
+                            autocomplete="off" />
+                        <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="text-danger">
+                            <div *ngIf="fname.errors?.['required']">Please enter the first name.</div>
+                            <div *ngIf="fname.errors?.['pattern']">Only characters are allowed.</div>
+                            <div *ngIf="fname.errors?.['minlength']">Minimum length is 3 characters.</div>
+                            <div *ngIf="fname.errors?.['maxlength']">Maximum length is 10 characters.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="row mb-3 align-items-center">
+                    <label for="lname" class="col-md-3 col-form-label"> *Last Name</label>
+                    <div class="col-md-9">
+                        <input type="text" id="lname" name="lname" class="form-control" [(ngModel)]="patient.lname"
+                            required minlength="3" maxlength="10" pattern="^[A-Za-z]+$" #lname="ngModel"
+                            autocomplete="off" />
+                        <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="text-danger">
+                            <div *ngIf="lname.errors?.['required']">Please enter the last name.</div>
+                            <div *ngIf="lname.errors?.['pattern']">Only characters are allowed.</div>
+                            <div *ngIf="lname.errors?.['minlength']">Minimum length is 3 characters.</div>
+                            <div *ngIf="lname.errors?.['maxlength']">Maximum length is 10 characters.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Age -->
+                <div class="row mb-3 align-items-center">
+                    <label for="age" class="col-md-3 col-form-label">*Age</label>
+                    <div class="col-md-9">
+                        <input type="number" id="age" name="age" class="form-control" [(ngModel)]="patient.age" required
+                            pattern="^(1[5-9]|[2-6][0-9]|70)$" #age="ngModel" autocomplete="off" />
+                        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="text-danger">
+                            <div *ngIf="age.errors?.['required']">Please enter your age.</div>
+                            <div *ngIf="age.errors?.['pattern']">Age must be between 15 and 70.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Group -->
+                <div class="row mb-3 align-items-center">
+                    <label for="bgid" class="col-md-3 col-form-label">*Blood Group</label>
+                    <div class="col-md-9">
+                        <select id="bgid" name="bgid" class="form-select" [(ngModel)]="patient.bgid" required
+                            #bgid="ngModel">
+                            <option value="" disabled>Select blood group</option>
+                            <option *ngFor="let bg of bloodGroups" [value]="bg.bgid">{{ bg.bloodgroup }}</option>
+                        </select>
+                        <div *ngIf="bgid.invalid && (bgid.dirty || bgid.touched)" class="text-danger">
+                            Please select a blood group.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="text-center">
+                    <button type="button" class="btn btn-success mx-2" (click)="onAdd()">Add</button>
+                    <button type="button" class="btn btn-warning mx-2" (click)="onUpdate()">Update</button>
+                    <button type="button" class="btn btn-danger mx-2" (click)="onDelete()">Delete</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer bg-primary text-white text-center">
+            <p class="mb-1">&copy; 2025 My Website | All rights reserved.</p>
+            <p class="mb-0">
+                Follow us on:
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </p>
+        </div>
+    </div>
+</div>
