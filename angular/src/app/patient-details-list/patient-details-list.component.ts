@@ -26,15 +26,15 @@ ngOnInit(): void {
     this.loadBloodGroups();
     this.loadPatients();
   }
-
+//bind data from the patients
   loadPatients() {
     this.patientService.getPatients().subscribe(data => this.patients = data);
   }
-
+//bind the bloodgroups
   loadBloodGroups() {
     this.bloodGroupService.getBloodGroups().subscribe(data => this.bloodGroups = data);
   }
-
+//this function binding the bloodgroup in table based on id
   getBloodGroupName(bgid: number): string {
     const bg = this.bloodGroups.find(b => b.bgid === bgid);
     return bg ? bg.bloodgroup : 'Unknown';

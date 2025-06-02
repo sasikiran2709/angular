@@ -14,5 +14,7 @@ export class BloodgroupserviceService {
 
     getBloodGroups(): Observable<patient_Details_bloodgroup[]> {
     return this.http.get<patient_Details_bloodgroup[]>(this.bgurl);
+
+   
   }
 }

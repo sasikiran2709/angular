@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./patientd.component.css']  
 })
 export class PatientdComponent implements OnInit {
-  patients: patientd[] = [];
+  
   patient: patientd = {
     pid:0,
     fname: '',
@@ -24,6 +24,7 @@ export class PatientdComponent implements OnInit {
     bgid:0
   };
 searchPid: number = 0;
+
   bloodGroups: patient_Details_bloodgroup[] = [];
 
   constructor(private bloodGroupService: BloodgroupserviceService,private patientService: PatientserviceService,private router: Router) {}
@@ -103,6 +104,7 @@ onDelete() {
     this.patient.age !== null &&
     /^(1[5-9]|[2-6][0-9]|70)$/.test(this.patient.age?.toString() || '') &&
     this.patient.bgid!= 0;
+    
 
   if (action === 'add') {
     return basicValid;
