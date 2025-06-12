@@ -1,0 +1,16 @@
+<div class="container mt-4" *ngIf="patient">
+  <h2>Patient Details (ID: {{ patientId }})</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><strong>First Name:</strong> {{ patient.fname }}</li>
+    <li class="list-group-item"><strong>Last Name:</strong> {{ patient.lname }}</li>
+    <li class="list-group-item"><strong>Age:</strong> {{ patient.age }}</li>
+    <li class="list-group-item"><strong>Blood Group:</strong> {{getBloodGroupName(patient.bgid)}}</li>
+  </ul>
+</div>
+
+<ng-template #notFound>
+  <p class="text-danger">Patient not found.</p>
+</ng-template>
+
+
+<p><a routerLink="/patient-list">← Back to list</a></p>

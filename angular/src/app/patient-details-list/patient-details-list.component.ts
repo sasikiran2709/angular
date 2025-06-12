@@ -4,11 +4,11 @@ import { patient_Details_bloodgroup } from '../patient/patientd/bloodGroup.model
 import { PatientserviceService } from '../patient/patientservice.service';
 import { BloodgroupserviceService } from '../patient/patientd/bloodgroupservice.service';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router,RouterModule } from '@angular/router';
 @Component({
   selector: 'app-patient-details-list',
   standalone:true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './patient-details-list.component.html',
   styleUrl: './patient-details-list.component.css'
 })
@@ -43,5 +43,8 @@ ngOnInit(): void {
 goToAddPatient(): void {
   this.router.navigate(['/patient-add']);
 }
-  
+  goToDetails(pid: number) {
+  this.router.navigateByUrl(`/details/${pid}`);
+
+}
 }

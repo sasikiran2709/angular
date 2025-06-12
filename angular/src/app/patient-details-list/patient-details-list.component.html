@@ -12,8 +12,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let p of patients">
-       
-        <td>{{ p.pid }}</td>
+<!-- <td><a [routerLink]="['/details', p.pid]">{{ p.pid }}</a></td> -->
+ <td><button class="btn btn-danger" (click)="goToDetails(p.pid)">{{ p.pid }}</button></td>
         <td>{{ p.fname }}</td>
         <td>{{ p.lname }}</td>
         <td>{{ p.age }}</td>
